@@ -3,94 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD FAHIM - Developer Portfolio</title>
+    <title>Md Fahim | Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            background: #121212;
-            color: #fff;
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 60px 20px;
+        :root {
+            --bg-color: #0b111e;
+            --card-bg: #141d2f;
+            --text-color: #f8fafc;
+            --primary-color: #00d2ff;
+            --accent-color: #00ffaa;
+        }
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
         }
-        .profile-card {
-            background: #1e1e1e;
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-            border: 1px solid #333;
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .profile-icon {
-            font-size: 3.5rem;
+        .wrapper {
+            width: 100%;
+            max-width: 1100px;
+            padding: 20px;
+        }
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .logo span {
+            color: var(--accent-color);
+        }
+        .hero-section {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #1e293b;
+        }
+        .profile-area {
+            text-align: center;
+            flex: 1;
+        }
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+        }
+        .info-area {
+            flex: 2;
+        }
+        .info-area h1 {
+            font-size: 36px;
             margin-bottom: 10px;
         }
-        h1 {
-            color: #00ffcc;
-            font-size: 2.2rem;
-            margin: 10px 0 5px 0;
+        .info-area h2 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 400;
         }
-        .tagline {
-            color: #aaaaaa;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .bio-text {
+            color: #94a3b8;
+            line-height: 1.6;
             margin-bottom: 25px;
         }
-        .info-table {
-            width: 100%;
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .detail-item strong {
+            color: var(--accent-color);
+        }
+        .section-title {
+            font-size: 28px;
+            margin: 40px 0 20px 0;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.2);
+        }
+        .service-card i {
+            font-size: 35px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .service-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .contact-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid #1e293b;
+        }
+        .social-icons {
             margin-top: 20px;
-            border-collapse: collapse;
-            text-align: left;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        .info-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #2a2a2a;
-            font-size: 1.05rem;
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 24px;
+            background: #1e293b;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
         }
-        .info-table td.label {
-            color: #00ffcc;
-            font-weight: bold;
-            width: 40%;
+        .social-icons a:hover {
+            background: var(--primary-color);
+            color: #000;
+            transform: scale(1.1);
         }
-        .footer-text {
-            color: #666;
-            font-size: 0.8rem;
-            margin-top: 30px;
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid #1e293b;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info-area h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="profile-card">
-        <!-- ছবির বদলে একটি সুন্দর কোডিং ইমোজি আইকন -->
-        <div class="profile-icon">👨‍💻</div>
-        
-        <h1>MD FAHIM</h1>
-        <p class="tagline">Junior Developer</p>
-        
-        <table class="info-table">
-            <tr>
-                <td class="label">Age:</td>
-                <td>14 Years</td>
-            </tr>
-            <tr>
-                <td class="label">Profession:</td>
-                <td>Student & Developer</td>
-            </tr>
-            <tr>
-                <td class="label">Skills:</td>
-                <td>HTML, Java, Python</td>
-            </tr>
-            <tr>
-                <td class="label">Career Goal:</td>
-                <td>Software Engineer</td>
-            </tr>
-        </table>
+    <div class="wrapper">
+        <header>
+            <div class="logo">Fahim<span>.vip</span></div>
+        </header>
+        <section class="hero-section">
+            <div class="profile-area">
+                <img src="fahim.jpg" alt="Md Fahim" class="profile-img">
+            </div>
+            <div class="info-area">
+                <h1>Md Fahim</h1>
+                <h2>Full-Stack Developer & Tech Enthusiast</h2>
+                <p class="bio-text">
+                    হ্যালো! আমি ফাহিম। একজন প্যাশনেট ফুল-স্ট্যাক ওয়েব ডেভেলপার। নতুন নতুন টেকনোলজি এক্সপ্লোর করা, ক্লিন কোড লেখা এবং আধুনিক রেসপন্সিভ ওয়েবসাইট তৈরি করা আমার দারুণ ভালো লাগে। আমি সবসময় কোডিং ও টেকনিক্যাল প্রজেক্টের মাধ্যমে নতুন কিছু তৈরি করতে পছন্দ করি।
+                </p>
+                <div class="details-grid">
+                    <div class="detail-item"><strong>Age:</strong> 14 Years</div>
+                    <div class="detail-item"><strong>Residence:</strong> Bangladesh</div>
+                    <div class="detail-item"><strong>Address:</strong> Rangpur, Bangladesh</div>
+                    <div class="detail-item"><strong>Freelance:</strong> Available</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="section-title">What I Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, এবং JavaScript ব্যবহার করে আকর্ষণীয়, আধুনিক ও রেসপন্সিভ ওয়েবসাইট তৈরি করি যা যেকোনো ডিভাইসে নিখুঁত দেখায়।</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Full-Stack Solutions</h3>
+                    <p>ফ্রন্ট-এন্ড থেকে শুরু করে ব্যাক-এন্ড লজিক এবং পাইথন বা জাভার মতো ল্যাঙ্গুয়েজ দিয়ে ডাইনামিক ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্ট।</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h3>Tech Consulting</h3>
+                    <p>বিভিন্ন টেকনিক্যাল প্রজেক্টের আইডিয়া, কমান্ড-লাইন টুলস এবং গিটহাব রিপোজিটরি ম্যানেজমেন্ট সংক্রান্ত গাইডলাইন ও কনসালটেন্সি।</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact-section">
+            <h2 class="section-title" style="margin-top:0;">Get In Touch</h2>
+            <p style="color: #94a3b8; margin-bottom: 20px;">যেকোনো প্রজেক্ট বা কোডিংয়ের প্রয়োজনে আমার সাথে যোগাযোগ করতে পারো।</p>
+            <p><strong>Email:</strong> fahimforwork1@gmail.com</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:fahimforwork1@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </section>
     </div>
-
-    <p class="footer-text">Developer Portfolio &bull; Hosted via GitHub</p>
-
+    <footer>
+        &copy; 2026 Md Fahim. All Rights Reserved. Powered by GitHub Pages.
+    </footer>
 </body>
 </html>
